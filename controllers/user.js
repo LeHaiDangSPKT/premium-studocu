@@ -9,7 +9,7 @@ class user {
   check(req, res, next) {
     var user = req.body;
     try {
-      UserModel.findOne({ code: user.code })
+      UserModel.findOne({ _id: user.id, code: user.code })
         .then((result) => {
           if (result) {
             res.json(result);
